@@ -12,9 +12,9 @@ class Article extends \Model
 
     public static function getLastArticles()
     {
-        $db = new \Db();
+        $db = \Db::instance();
 
-        $sql = 'SELECT * FROM ' . static::TABLE . ' ORDER By id DESC Limit 3';
+        $sql = 'SELECT * FROM ' . static::TABLE . ' ORDER BY id DESC LIMIT 3';
         return $db->query($sql, static::class);
     }
 }

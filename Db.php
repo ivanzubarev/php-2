@@ -3,11 +3,22 @@
 class Db
 {
 
+    protected static $instance = null;
     protected PDO $dbh;
 
-    public function __construct()
+    public static function instance()
     {
-        $this->dbh = new \PDO('pgsql:host=localhost;dbname=php2', 'postgres', 'postgres');
+        if (null === self::$instance) {
+            self::$instance = new self();
+        }
+        return self::$instance;
+    }
+
+    protected function __construct()
+    {
+        $config = \App\Config::instance();
+
+        $this->dbh = new \PDO('pgsql:host=' . $config->data['db']['host'] . ';dbname=' . $config->data['db']['dbname'], $config->data['db']['user'], $config->data['db']['password']);
     }
 
     public function query($sql, $class, array $params = []): array
@@ -21,6 +32,11 @@ class Db
     {
         $sth = $this->dbh->prepare($sql);
         return $sth->execute($params);
+    }
+
+    public function lastId()
+    {
+        return $this->dbh->lastInsertId();
     }
 
 }
