@@ -5,7 +5,11 @@ abstract class Model
 
     protected const TABLE = '';
 
-    public int $id;
+    protected int $id;
+
+    public function getId() {
+        return $this->id;
+    }
 
     public static function findAll(string $orderBy = 'id'): array
     {

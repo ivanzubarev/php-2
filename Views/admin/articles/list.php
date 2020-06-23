@@ -31,13 +31,13 @@
     </tr>
     <?php foreach ($articles as $article) { ?>
         <tr>
-            <td><?php echo $article->id; ?></td>
+            <td><?php echo $article->getId(); ?></td>
             <td><?php echo $article->title; ?></td>
             <td><?php echo $article->article_text; ?></td>
             <td>
-                <a href="/admin.php?edit=<?php echo $article->id; ?>">Edit</a>
+                <a href="/admin.php?edit=<?php echo $article->getId();; ?>">Edit</a>
                 <br>
-                <a href="/admin.php?delete=<?php echo $article->id; ?>">Delete</a>
+                <a href="/admin.php?delete=<?php echo $article->getId();; ?>">Delete</a>
             </td>
         </tr>
     <?php } ?>
