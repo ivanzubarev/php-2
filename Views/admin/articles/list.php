@@ -1,28 +1,25 @@
 <style>
-    form {
-        text-align: center;
+    body {
+        max-width: 960px;
+        margin: auto;
     }
 
-    form, table {
-        max-width: 1200px;
-        margin: auto;
+    form {
+        text-align: center;
     }
 
     table td {
         padding: 15px;
     }
 </style>
-<form action="/admin.php?new_article" method="POST">
-    <input type="text" name="title" placeholder="Название статьи">
-    <br>
-    <textarea name="article_text" placeholder="Текст статьи"></textarea>
-    <br>
-    <button type="submit">Создать новость</button>
-</form>
+
+<div style="text-align: Center;">
+    <a href="/create.php">Создать новость</a>
+</div>
 
 <hr>
 <?php if (count($articles) > 0) { ?>
-<table border="1">
+<table border="1" width="100%">
     <tr>
         <td>id</td>
         <td>Title</td>
@@ -35,9 +32,9 @@
             <td><?php echo $article->title; ?></td>
             <td><?php echo $article->article_text; ?></td>
             <td>
-                <a href="/admin.php?edit=<?php echo $article->getId();; ?>">Edit</a>
+                <a href="/edit.php?id=<?php echo $article->getId();; ?>">Edit</a>
                 <br>
-                <a href="/admin.php?delete=<?php echo $article->getId();; ?>">Delete</a>
+                <a href="/delete.php?id=<?php echo $article->getId();; ?>">Delete</a>
             </td>
         </tr>
     <?php } ?>

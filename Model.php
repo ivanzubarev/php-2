@@ -83,6 +83,9 @@ abstract class Model
         $substitution = [];
         $data = [];
         foreach ($props as $name => $value) {
+            if ('id' === $name) {
+                continue;
+            }
             $substitution[] = $name . '=:' . $name;
             $data[':' . $name] = $value;
         }
@@ -93,6 +96,7 @@ abstract class Model
         WHERE
         id=:id';
 
+        $data[':id'] = $this->id;
         $db = Db::instance();
         return $db->execute($sql, $data);
 
