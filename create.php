@@ -12,4 +12,6 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $article->save();
     
     header('Location: /admin.php');
+
+    die;
 }

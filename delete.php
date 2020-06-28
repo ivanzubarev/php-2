@@ -7,4 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $article->delete();
 
     header('Location: /admin.php');
+
+    die;
 }
