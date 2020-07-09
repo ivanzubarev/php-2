@@ -4,6 +4,8 @@ use Models\Article;
 
 include __DIR__ . '/autoload.php';
 
-$article = Article::findById($_GET['id']);
+$view = new View();
 
-include __DIR__ . '/Views/article.php';
+$view->article = Article::findById($_GET['id']);
+
+$view->display(__DIR__ . '/Views/article.php');

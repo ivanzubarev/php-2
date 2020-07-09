@@ -1,3 +1,3 @@
 <a href="/">На главную</a>
-<h1><?php echo $article->title; ?></h1>
-<?php echo $article->article_text; ?>
+<h1><?php echo $this->article->title; ?></h1>
+<?php echo $this->article->article_text; ?>

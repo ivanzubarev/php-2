@@ -1,6 +1,6 @@
 <h1>Последние новости</h1>
 <?php
-foreach ($lastArticles as $article) { ?>
+foreach ($this->lastArticles as $article) { ?>
     <p><a href="/article.php?id=<?php echo $article->getId(); ?>"><?php echo $article->title; ?></a></p>
 <?php } ?>
 

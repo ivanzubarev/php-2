@@ -2,6 +2,8 @@
 
 include __DIR__ . '/autoload.php';
 
-$articles = \Models\Article::findAll();
+$view = new View();
 
-include __DIR__ . '/Views/admin/articles/list.php';
+$view->articles = \Models\Article::findAll();
+
+$view->display(__DIR__ . '/Views/admin/articles/list.php');

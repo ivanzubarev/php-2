@@ -3,8 +3,11 @@
 include __DIR__ . '/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $article = \Models\Article::findById($_GET['id']);
-    include __DIR__ . '/Views/admin/articles/edit.php';
+    $view = new View();
+
+    $view->article = \Models\Article::findById($_GET['id']);
+
+    $view->display(__DIR__ . '/Views/admin/articles/edit.php');
 }
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $article = \Models\Article::findById($_POST['id']);

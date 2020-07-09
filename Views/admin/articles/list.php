@@ -18,7 +18,7 @@
 </div>
 
 <hr>
-<?php if (count($articles) > 0) { ?>
+<?php if (count($this->articles) > 0) { ?>
 <table border="1" width="100%">
     <tr>
         <td>id</td>
@@ -26,7 +26,7 @@
         <td>Article Text</td>
         <td>Actions</td>
     </tr>
-    <?php foreach ($articles as $article) { ?>
+    <?php foreach ($this->articles as $article) { ?>
         <tr>
             <td><?php echo $article->getId(); ?></td>
             <td><?php echo $article->title; ?></td>

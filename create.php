@@ -3,7 +3,8 @@
 include __DIR__ . '/autoload.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    include __DIR__ . '/Views/admin/articles/create.php';
+    $view = new View();
+    $view->display(__DIR__ . '/Views/admin/articles/create.php');
 }
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $article = new \Models\Article();
