@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 
-trait FillablaTrait
+trait FillableTrait
 {
     protected array $data = [];
 

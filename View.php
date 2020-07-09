@@ -3,7 +3,7 @@
 class View implements Countable
 {
 
-    use \App\Traits\FillablaTrait;
+    use \App\Traits\FillableTrait;
 
 
     public function display(string $template)
