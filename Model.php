@@ -19,6 +19,9 @@ abstract class Model
         return $db->query($sql, static::class);
     }
 
+    /**
+     * @return static Indicates the number of items.
+     */
     public static function findById($id)
     {
         $db = Db::instance();

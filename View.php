@@ -5,7 +5,6 @@ class View implements Countable
 
     use \App\Traits\FillableTrait;
 
-
     public function display(string $template)
     {
         include $template;

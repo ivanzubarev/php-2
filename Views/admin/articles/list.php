@@ -14,7 +14,10 @@
 </style>
 
 <div style="text-align: Center;">
-    <a href="/create.php">Создать новость</a>
+    <p>
+        <a href="/">На главную</a>
+    </p>
+    <button type="button" onclick="location.href = '/create.php';">Создать новость</button>
 </div>
 
 <hr>
@@ -24,6 +27,7 @@
         <td>id</td>
         <td>Title</td>
         <td>Article Text</td>
+        <td>Author</td>
         <td>Actions</td>
     </tr>
     <?php foreach ($this->articles as $article) { ?>
@@ -31,6 +35,7 @@
             <td><?php echo $article->getId(); ?></td>
             <td><?php echo $article->title; ?></td>
             <td><?php echo $article->article_text; ?></td>
+            <td><?php echo ($article->author != null) ? $article->author->name : 'Аноним'; ?></td>
             <td>
                 <a href="/edit.php?id=<?php echo $article->getId();; ?>">Edit</a>
                 <br>
