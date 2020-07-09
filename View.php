@@ -2,22 +2,9 @@
 
 class View implements Countable
 {
-    protected array $data = [];
 
-    public function __set($name, $value)
-    {
-        $this->data[$name] = $value;
-    }
-
-    public function __get($name)
-    {
-        return $this->data[$name] ?? null;
-    }
-
-    public function __isset($name)
-    {
-        return isset($this->data[$name]);
-    }
+    use \App\Traits\FillablaTrait;
+    use \App\Traits\CountableTrait;
 
     public function display(string $template)
     {
@@ -31,10 +18,5 @@ class View implements Countable
         $contents = ob_get_contents();
         ob_end_clean();
         return $contents;
-    }
-
-    public function count()
-    {
-        return count($this->data);
     }
 }
