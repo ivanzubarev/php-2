@@ -11,7 +11,7 @@ class Article extends \Model
 
     public string $title;
     public string $article_text;
-    protected ?int $author_id;
+    public ?int $author_id;
 
     public function __set($name, $value)
     {
