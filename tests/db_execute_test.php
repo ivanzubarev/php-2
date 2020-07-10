@@ -2,7 +2,7 @@
 
 include __DIR__ . '/../autoload.php';
 
-$db = new \Db();
+$db = Db::instance();
 
 $sql = 'SELECT * FROM users';
 assert($db->execute($sql) === true);

@@ -14,7 +14,7 @@
         <input type="text" name="title" placeholder="Название">
     </p>
     <p>
-        <textarea name="article_text" placeholder="Текст новости"></textarea>
+        <textarea rows="15" cols="50" name="article_text" placeholder="Текст новости"></textarea>
     </p>
     <p>
         <button type="submit">Создать</button>
